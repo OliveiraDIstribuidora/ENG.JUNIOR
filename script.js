@@ -1,0 +1,2 @@
+const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const topbar=document.querySelector('.topbar');window.addEventListener('scroll',()=>{topbar.style.boxShadow=window.scrollY>30?'0 10px 30px rgba(0,0,0,.08)':'none'});
